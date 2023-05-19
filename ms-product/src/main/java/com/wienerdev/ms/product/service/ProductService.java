@@ -1,7 +1,9 @@
 package com.wienerdev.ms.product.service;
 
 import com.wienerdev.ms.product.domain.Product;
-import com.wienerdev.ms.product.dto.ProductDto;
+import com.wienerdev.ms.product.dto.CreateProductRequest;
+import com.wienerdev.ms.product.dto.ProductResponse;
+import com.wienerdev.ms.product.dto.UpdateProductRequest;
 import com.wienerdev.ms.product.repository.IProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,50 +25,50 @@ public class ProductService {
     @Autowired
     private final IProductRepository productRepository;
 
-    public ProductDto createProduct(ProductDto dto) {
-        var entity = mapper.map(dto, Product.class);
+    public ProductResponse createProduct(CreateProductRequest request) {
+        var entity = mapper.map(request, Product.class);
 
         entity.setId(UUID.randomUUID());
 
         var entitySaved = productRepository.save(entity);
 
         log.info(
-            String.valueOf(new StringBuffer().append("Employee Created: ")
-                    .append("ID: ").append(entitySaved.getId())
-                    .append("Nome: ").append(entitySaved.getName())
-                    .append("Descricao: ").append(entitySaved.getDescription())
-                    .append("Preco: ").append(entitySaved.getPrice())));
+            String.valueOf(new StringBuffer().append("\n --- Employee Created --- ")
+                    .append("\nID: ").append(entitySaved.getId())
+                    .append("\nNome: ").append(entitySaved.getName())
+                    .append("\nDescricao: ").append(entitySaved.getDescription())
+                    .append("\nPreco: ").append(entitySaved.getPrice())));
 
-        return mapper.map(entitySaved, ProductDto.class);
+        return mapper.map(entitySaved, ProductResponse.class);
     }
 
-    public ProductDto updateProduct(ProductDto dto) {
-        var entity = mapper.map(dto, Product.class);
+    public ProductResponse updateProduct(UpdateProductRequest request) {
+        var entity = mapper.map(request, Product.class);
 
         var entitySaved = productRepository.save(entity);
 
         log.info(
-                String.valueOf(new StringBuffer().append("Employee Updated: ").append("ID: ")
-                        .append(entitySaved.getId())
-                        .append("Nome: ").append(entitySaved.getName())
-                        .append("Descricao: ").append(entitySaved.getDescription())
-                        .append("Preco: ").append(entitySaved.getPrice())));
+                String.valueOf(new StringBuffer().append("\n --- Employee Updated --- ")
+                        .append("\nID: ").append(entitySaved.getId())
+                        .append("\nNome: ").append(entitySaved.getName())
+                        .append("\nDescricao: ").append(entitySaved.getDescription())
+                        .append("\nPreco: ").append(entitySaved.getPrice())));
 
-        return mapper.map(entitySaved, ProductDto.class);
+        return mapper.map(entitySaved, ProductResponse.class);
     }
 
-    public List<ProductDto> getAllProducts() {
+    public List<ProductResponse> getAllProducts() {
         var entities = productRepository.findAll();
 
         log.info("Found {} employees", entities.size());
 
-        return entities.stream().map(product -> mapper.map(product, ProductDto.class)).toList();
+        return entities.stream().map(product -> mapper.map(product, ProductResponse.class)).toList();
     }
 
-    public ProductDto getProductById(UUID id) {
+    public ProductResponse getProductById(UUID id) {
         var entity = productRepository.findById(id);
 
-        return mapper.map(entity, ProductDto.class);
+        return mapper.map(entity, ProductResponse.class);
     }
 
     public boolean removeProduct(UUID id) {

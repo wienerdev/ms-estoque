@@ -5,14 +5,8 @@ d
 Nms-commons/src/main/java/com/wienerdev/ms/commons/dto/CustomErrorResponse.java,6\3\631eb7130696a8d74a8daa4e7600f7ec3ece4483
 C
 ms-product/mvnw.cmd,f\3\f3ff728fca8203cf52bf5257c05db301ea50f9f4
-B
-ms-commons/pom.xml,c\b\cb62fc06f1486b5aeddb92fdb4ca2e8aad740688
-B
-ms-product/pom.xml,8\5\85ebe4cfac4f245f594f78c3d921d668ac0b21dc
 „
 Tms-product/src/main/java/com/wienerdev/ms/product/repository/IProductRepository.java,0\0\00dca0bd0599a335cb748492551b0252960d44f4
-ƒ
-Sms-product/src/main/java/com/wienerdev/ms/product/controller/ProductController.java,6\1\61fddba116a1384be546383ce4e8025f7eeb73e0
 ‚
 Rms-commons/src/main/java/com/wienerdev/ms/commons/exceptions/EstoqueException.java,9\9\996230c521053c471d14f2e4da2beea7d824020d
 ‰
@@ -23,11 +17,5 @@ Kms-commons/src/main/java/com/wienerdev/ms/commons/MsCommonsApplication.java,c\
 Qms-commons/src/main/java/com/wienerdev/ms/commons/configuration/EnableMapper.java,4\d\4d8edabf8f6cf0ae514cf681215a655d4075c50b
 ˆ
 Xms-commons/src/main/java/com/wienerdev/ms/commons/configuration/MapperConfiguration.java,f\0\f0a5c2327afbc38d7d5bc86389a7d18231393d8c
-{
-Kms-product/src/main/java/com/wienerdev/ms/product/MsProductApplication.java,b\b\bb5deb04d953c7be34505bee1434943bcbb8c4ba
 u
 Ems-product/src/main/java/com/wienerdev/ms/product/domain/Product.java,4\1\41c5c50b4db750a5231683f1cfd3f2f70f31ede6
-u
-Ems-product/src/main/java/com/wienerdev/ms/product/dto/ProductDto.java,e\2\e270584fa9c245233bab8a5f71d165e5b3202743
-}
-Mms-product/src/main/java/com/wienerdev/ms/product/service/ProductService.java,8\1\8117038e93dc8fe927026ad57f4934dcf8e6b389

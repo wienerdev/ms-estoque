@@ -12,11 +12,10 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductDto {
+public class UpdateProductRequest {
 
     private UUID id;
     private String name;
     private String description;
     private BigDecimal price;
-
 }
